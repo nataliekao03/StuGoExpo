@@ -1,10 +1,7 @@
 import { Stack } from "expo-router";
 import { Button, YStack } from "tamagui";
 import { Home } from "@tamagui/lucide-icons";
-
-function something() {
-  console.log("hello World");
-}
+import { something } from "./test";
 
 export default () => {
   return (

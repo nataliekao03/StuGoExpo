@@ -1,9 +1,10 @@
 import { Stack } from "expo-router";
-import { Button, YStack } from "tamagui";
+import { Input, Button, YStack } from "tamagui";
 import { Home } from "@tamagui/lucide-icons";
-import { something } from "./test";
+import { replace_text, something } from "./test";
 
 export default () => {
+  var message = "";
   return (
     <YStack
       flex={1}
@@ -12,7 +13,15 @@ export default () => {
       backgroundColor="#ddf"
     >
       <Stack.Screen options={{ title: "Home" }} />
-      <Button icon={<Home />} onTouchEnd={something}>
+      <Input
+        id="message"
+        componentName="text_box"
+        size="$4"
+        borderWidth={2}
+        placeholder=" Input Some Text"
+        onChange={(Text) => replace_text}
+      ></Input>
+      <Button icon={<Home />} onTouchEnd={() => something}>
         Hello world
       </Button>
     </YStack>

@@ -1,15 +1,6 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getFireStore, doc, setDoc } from "firebase/firestore";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { collection, addDoc } from "firebase/firestore";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCg004-7rOqQF5MqdP1_E_UaW6i-HUcmBU",
   authDomain: "stugo-app-93b16.firebaseapp.com",
@@ -20,9 +11,6 @@ const firebaseConfig = {
   measurementId: "G-G66KTQ02CK",
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const db = getFireStore();
 
 const addUser = doc(db, "test/HelloWorld");
@@ -36,4 +24,4 @@ function writeUsers() {
 }
 writeUsers();
 
-//Detect auth state
+console.log("Hello World");

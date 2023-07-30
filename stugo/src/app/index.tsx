@@ -17,19 +17,6 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 
 const addUser = doc(db, "test/HelloWorld");
-function writeUsers() {
-  const docRef = {
-    first: "Ada",
-    last: "Lovelace",
-    born: 1815,
-  };
-  setDoc(addUser, docRef);
-}
-
-function something() {
-  console.log("hello World");
-  writeUsers();
-}
 
 export default () => {
   return (

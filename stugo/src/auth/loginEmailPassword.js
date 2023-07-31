@@ -11,9 +11,7 @@ const loginWithEmailPassword = async (email, password) => {
     console.log("Logged in user:", user);
   } catch (error) {
     // Handle errors during login
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    console.error("Error signing in:", errorCode, errorMessage);
+    console.error("Error signing in:", error);
   }
 };
 

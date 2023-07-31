@@ -5,7 +5,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 import { loginWithEmailPassword } from "../auth/loginEmailPassword";
 import { writeUsers } from "./test";
-import { firebaseConfig } from "../firebaseConfig";
+// import { app } from "../firebaseConfig";
 
 // const firebaseConfig = {
 //   apiKey: "AIzaSyCg004-7rOqQF5MqdP1_E_UaW6i-HUcmBU",

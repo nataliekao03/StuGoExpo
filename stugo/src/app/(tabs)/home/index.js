@@ -6,7 +6,7 @@ const Tab1Index = () => {
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <Stack.Screen options={{ headerShown: true, title: "Home" }} />
       <Link href="/home/details">Go to Details</Link>
-      <Link href="/home/new-entry-modal">Present modal</Link>
+      <Link href="/new-entry-modal">Present modal</Link>
     </View>
   );
 };

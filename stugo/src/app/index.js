@@ -23,7 +23,7 @@ const Index = () => {
       !inAuthGroup
     ) {
       // Redirect to the login page.
-      router.replace("/loginEmailPassword");
+      router.replace("/opening");
     } else if (isLoggedIn) {
       // go to tabs root.
       router.replace("/(tabs)/home");

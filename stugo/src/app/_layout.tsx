@@ -5,7 +5,7 @@ import { RootProvider } from "../RootProvider";
 export default () => {
   return (
     <RootProvider>
-      <Stack />
+      <Stack screenOptions={{ headerShown: false }} />
     </RootProvider>
   );
 };

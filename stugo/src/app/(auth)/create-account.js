@@ -1,7 +1,9 @@
+import React, { useRef } from "react";
 import { Text, View, TextInput, StyleSheet, Alert } from "react-native";
-import { useRef } from "react";
 import { AuthStore, appSignUp } from "../../store.js";
 import { Stack, useRouter } from "expo-router";
+import { YStack, TextArea, PasswordInput, Input } from "tamagui";
+import { Image } from "tamagui";
 
 export default function CreateAccount() {
   const router = useRouter();
@@ -12,55 +14,60 @@ export default function CreateAccount() {
 
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Stack.Screen
+      {/* <Stack.Screen
         options={{ title: "Create Account", headerLeft: () => <></> }}
+      /> */}
+      <Image
+        source={require("./studentSignUp.png")}
+        style={{
+          width: "110%",
+          height: "100%",
+          position: "absolute",
+        }}
       />
-      <View>
-        <Text style={styles.label}>Email</Text>
-        <TextInput
-          placeholder="email"
-          nativeID="email"
-          onChangeText={(text) => {
-            emailRef.current = text;
-          }}
-          style={styles.textInput}
-        />
-      </View>
-      <View>
-        <Text style={styles.label}>First Name</Text>
-        <TextInput
-          placeholder="firstName"
-          nativeID="firstName"
-          onChangeText={(text) => {
-            firstNameRef.current = text;
-          }}
-          style={styles.textInput}
-        />
-      </View>
-      <View>
-        <Text style={styles.label}>Last Name</Text>
-        <TextInput
-          placeholder="lastName"
-          nativeID="lastName"
-          onChangeText={(text) => {
-            lastNameRef.current = text;
-          }}
-          style={styles.textInput}
-        />
-      </View>
-      <View>
-        <Text style={styles.label}>Password</Text>
-        <TextInput
-          placeholder="password"
-          secureTextEntry={true}
-          nativeID="password"
-          onChangeText={(text) => {
-            passwordRef.current = text;
-          }}
-          style={styles.textInput}
-        />
-      </View>
-
+      <YStack
+        style={{
+          position: "absolute",
+          alignItems: "center",
+          padding: 5,
+          justifyItems: "space-between",
+          width: "100%",
+          top: "25%",
+        }}
+      ></YStack>
+      <TextInput
+        placeholder="Email"
+        nativeID="email"
+        onChangeText={(text) => {
+          emailRef.current = text;
+        }}
+        style={styles.textInput}
+      />
+      <TextInput
+        placeholder="First Name"
+        nativeID="firstName"
+        onChangeText={(text) => {
+          firstNameRef.current = text;
+        }}
+        style={styles.textInput}
+      />
+      <TextInput
+        placeholder="First Name"
+        nativeID="firstName"
+        onChangeText={(text) => {
+          firstNameRef.current = text;
+        }}
+        style={styles.textInput}
+      />
+      <TextInput
+        placeholder="Password"
+        secureTextEntry={true}
+        nativeID="password"
+        onChangeText={(text) => {
+          passwordRef.current = text;
+        }}
+        style={styles.textInput}
+      />
       <Text
         style={{ marginBottom: 8 }}
         onPress={async () => {
@@ -70,7 +77,7 @@ export default function CreateAccount() {
             firstNameRef.current + " " + lastNameRef.current,
           );
           if (resp?.user) {
-            router.replace("/(tabs)/home");
+            router.replace("/MoreAboutYou");
           } else {
             console.log(resp.error);
             Alert.alert("Sign Up Error", resp.error?.message);
@@ -79,7 +86,6 @@ export default function CreateAccount() {
       >
         CREATE NEW USER
       </Text>
-
       <Text
         onPress={() => {
           AuthStore.update((s) => {
@@ -95,17 +101,12 @@ export default function CreateAccount() {
 }
 
 const styles = StyleSheet.create({
-  label: {
-    marginBottom: 4,
-    color: "#455fff",
-  },
   textInput: {
-    width: 250,
+    width: 350,
+    height: 52,
+    margin: 12,
     borderWidth: 1,
-    borderRadius: 4,
-    borderColor: "#455fff",
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    marginBottom: 8,
+    padding: 10,
+    borderRadius: 6,
   },
 });
